@@ -1,0 +1,17 @@
+-- NOTE: default LazyVim folding not active for .rs
+-- using TreeSitter instead
+
+-- Ensure TreeSitter is available
+if vim.treesitter.highlighter.active[vim.api.nvim_get_current_buf()] then
+  vim.opt_local.foldmethod = "expr"
+  vim.opt_local.foldexpr = "nvim_treesitter#foldexpr()"
+  -- vim.opt_local.foldlevel = 1 -- Adjust this number as needed
+
+  -- Optional: Set other folding options
+  vim.opt_local.foldenable = true
+  vim.opt_local.foldminlines = 3
+else
+  -- Fallback to indent-based folding if TreeSitter is not available
+  vim.opt_local.foldmethod = "indent"
+  -- vim.opt_local.foldlevel = 3
+end
