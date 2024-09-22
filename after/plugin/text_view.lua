@@ -8,9 +8,9 @@ vim.cmd([[highlight ColorColumn ctermbg=0 guibg=#323252]])
 opt.colorcolumn = "80"
 
 -- fold configs
-opt.foldenable = true
+opt.foldenable = false
 opt.foldlevel = 3
-opt.foldlevelstart = 3
+opt.foldlevelstart = 4
 
 if vim.fn.has("nvim-0.10") == 1 then
   opt.smoothscroll = true
