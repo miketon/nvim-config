@@ -1,0 +1,26 @@
+# rustfmt.toml
+
+# Maximum width of each line (default: 100)
+max_width = 100
+
+# Indentation settings
+hard_tabs = false
+tab_spaces = 4
+
+# Control brace style (default: SameLine)
+brace_style = "SameLine"
+
+# Use compact function signatures
+fn_args_layout = "Vertical"
+
+# Ensure trailing commas in multi-line structures
+trailing_commas = "Vertical"
+
+# Wrap comments
+wrap_comments = true
+
+# Compact enums
+enum_discrim_height = 1
+
+# Disable rewrite rules that may not be desired
+rewrite_imports = false
