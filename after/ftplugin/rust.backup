@@ -1,4 +1,5 @@
--- NOTE: default LazyVim folding not active for .rs
+-- HACK: default LazyVim folding not active for .rs
+-- TODO: actually this isn't needed if rustaceanvim are loaded correctly
 -- using TreeSitter instead
 
 -- Ensure TreeSitter is available

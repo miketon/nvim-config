@@ -185,7 +185,7 @@ function RustTools.view_crate_graph(backend, output, max_depth)
 end
 
 -- Apply configuration
--- TODO: This is causing lsp to fail, figure out what is going on, co for now
--- vim.g["rustaceanvim"] = RustConfig.rustaceanvim
+-- TODO: This is causing lsp to fail, figure another way to get our keymaps
+-- vim.g["rustaceanvim"] = RustConfig.rustaceanvim -- HACK: don't do this
 
 return RustConfig.plugin_spec
