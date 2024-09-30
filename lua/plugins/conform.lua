@@ -56,13 +56,16 @@ return {
       table.insert(opts.formatters_by_ft.markdown, "markdownlint-cli2")
 
       -- Add configurations for markdown-toc and markdownlint-cli2
-      opts.formatters["markdown-toc"] = {
-        command = "markdown-toc",
-        args = { "--no-firsth1" },
-        condition = function(_)
-          return vim.fn.executable("markdown-toc") == 1
-        end,
-      }
+      -- TODO: Fix table of content formatting
+      -- opts.formatters["markdown-toc"] = {
+      --   command = "markdown-toc",
+      --   args = function(ctx)
+      --     return { "-i", "--no-firsth1", ctx.filename }
+      --   end,
+      --   condition = function(_)
+      --     return vim.fn.executable("markdown-toc") == 1
+      --   end,
+      -- }
 
       opts.formatters["markdownlint-cli2"] = {
         command = "markdownlint-cli2",
