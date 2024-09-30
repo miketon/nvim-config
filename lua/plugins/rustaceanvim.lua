@@ -75,6 +75,8 @@ RustConfig.rustaceanvim = {
           -- - main.rs : use bevy_inspector_egui::prelude::*;
           --    - with #[cfg(feature = "dev")]
           features = { "dev" },
+          -- TODO: update to detect wasm workspaces only
+          target = "wasm32-unknown-unknown",
         },
       },
     },
@@ -96,6 +98,9 @@ function RustTools.setup_keymaps(bufnr)
   map.set("n", "<leader>roc", function()
     vim.cmd.RustLsp("openCargo")
   end, extend("force", opts, { desc = "[r]ust: [o]pen [c]argo.toml" }))
+  map.set("n", "<leader>rod", function()
+    vim.cmd.RustLsp("openDocs")
+  end, extend("force", opts, { desc = "[r]ust: [o]pen [d]ocs" }))
   map.set("n", "<leader>rr", function()
     vim.cmd.RustLsp("runnables")
   end, extend("force", opts, { desc = "[r]ust: [r]unnables" }))
@@ -180,6 +185,7 @@ function RustTools.view_crate_graph(backend, output, max_depth)
 end
 
 -- Apply configuration
-vim.g["rustaceanvim"] = RustConfig.rustaceanvim
+-- TODO: This is causing lsp to fail, figure out what is going on, co for now
+-- vim.g["rustaceanvim"] = RustConfig.rustaceanvim
 
 return RustConfig.plugin_spec
