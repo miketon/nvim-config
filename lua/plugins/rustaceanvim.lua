@@ -74,7 +74,10 @@ RustConfig.rustaceanvim = {
           -- - cargo.toml : bevy-inspector-egui vs
           -- - main.rs : use bevy_inspector_egui::prelude::*;
           --    - with #[cfg(feature = "dev")]
-          features = { "dev" },
+          -- TODO: implement this at the per project level
+          -- this was actually causing rustaceanvim to FAIL in projects where
+          -- Cargo.toml did NOT DEFINE "dev"
+          -- features = { "dev" },
           -- TODO: update to detect wasm workspaces only
           target = "wasm32-unknown-unknown",
         },
@@ -185,7 +188,6 @@ function RustTools.view_crate_graph(backend, output, max_depth)
 end
 
 -- Apply configuration
--- TODO: This is causing lsp to fail, figure another way to get our keymaps
--- vim.g["rustaceanvim"] = RustConfig.rustaceanvim -- HACK: don't do this
+vim.g["rustaceanvim"] = RustConfig.rustaceanvim
 
 return RustConfig.plugin_spec
