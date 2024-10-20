@@ -17,7 +17,7 @@ return {
       opts.formatters.rustfmt = {
         -- Since we're using a global or per-project config, we don't need to specify 'prepend_args'
         -- NOTE: implicitly points to @lua/config/rustfmt.toml
-        args = {},
+        args = { "--edition", "2021" },
       }
 
       -- Prettier configuration
