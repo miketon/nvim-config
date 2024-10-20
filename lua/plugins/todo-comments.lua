@@ -9,6 +9,12 @@ return {
         color = "info",
         alt = { "IAM5" },
       },
+      -- clown world
+      OOOF = {
+        icon = "🤡",
+        color = "info",
+        alt = { "CLOWN" },
+      },
     },
   },
 }

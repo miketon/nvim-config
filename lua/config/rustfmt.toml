@@ -1,4 +1,6 @@
 # rustfmt.toml
+# Specify the Rust edition
+edition = "2021"
 
 # Maximum width of each line (default: 100)
 max_width = 100
@@ -8,7 +10,7 @@ hard_tabs = false
 tab_spaces = 4
 
 # Control brace style (default: SameLine)
-brace_style = "SameLine"
+brace_style = "PreferSameLine"
 
 # Use compact function signatures
 fn_args_layout = "Vertical"
