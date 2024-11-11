@@ -8,3 +8,7 @@ vim.keymap.set(
   require("telescope.builtin").resume,
   { noremap = true, silent = true, desc = "Resume" }
 )
+
+vim.keymap.set("n", "<leader>gm", function()
+  require("lazyvim.util").lazygit({ args = { "log" }, cwd = require("lazyvim.util").root.get() })
+end, { desc = "Lazygit Log", silent = true, noremap = true })
